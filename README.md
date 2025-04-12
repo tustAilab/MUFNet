@@ -26,7 +26,3 @@ If you want to download training weights, here are some options：
 * [Training weight92.69](https://pan.quark.cn/s/89bd49e1a824)
 * [Training weight92.54(ICIC)](https://rometools.github.io/rome/)
 
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
