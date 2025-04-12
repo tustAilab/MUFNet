@@ -4,18 +4,19 @@ In this study, we propose a novel self-attention-based dual-task learning approa
 
 ## Getting Started
 if you want to train:
-'''
+```
 python train_new.py
-'''
+```
 If you want to test individual model weights：
-'''
+```
 run cs_weight.py
-'''
+```
 If you want to test calculated ESV and EDV
-'''
+```
 run test_only_new.py
-run diff.py
-'''
+run calculate_diff.py
+```
+If you want to visualize，
 
 ### Prerequisites
 
