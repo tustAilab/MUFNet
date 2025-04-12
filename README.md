@@ -3,8 +3,19 @@
 In this study, we propose a novel self-attention-based dual-task learning approach 8 for automatic left ventricle segmentation.
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+if you want to train:
+'''
+python train_new.py
+'''
+If you want to test individual model weights：
+'''
+run cs_weight.py
+'''
+If you want to test calculated ESV and EDV
+'''
+run test_only_new.py
+run diff.py
+'''
 
 ### Prerequisites
 
