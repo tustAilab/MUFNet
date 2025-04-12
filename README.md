@@ -22,8 +22,8 @@ python3.8 ,pytorch and so on
 
 ## Training_weight
 If you want to download training weights, here are some options：
-* [Training weight92.79](http://www.dropwizard.io/1.0.2/docs/) 
-* [Training weight92.69](https://maven.apache.org/)
+* [Training weight92.79](https://pan.quark.cn/s/1cbaa899aa79) 
+* [Training weight92.69](https://pan.quark.cn/s/89bd49e1a824)
 * [Training weight92.54(ICIC)](https://rometools.github.io/rome/)
 
 
