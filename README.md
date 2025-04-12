@@ -1,6 +1,6 @@
-# Project Title
+# MUF-Net: A Novel Self-Attention Based Dual-Task Learning Approach for Automatic Left Ventricle Segmentation in Echocardiography
 
-One Paragraph of project description goes here
+In this study, we propose a novel self-attention-based dual-task learning approach 8 for automatic left ventricle segmentation.
 
 ## Getting Started
 
