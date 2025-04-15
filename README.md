@@ -24,5 +24,5 @@ python3.8 ,pytorch and so on
 If you want to download training weights, here are some options：
 * [Training weight92.79](https://pan.quark.cn/s/1cbaa899aa79) 
 * [Training weight92.69](https://pan.quark.cn/s/89bd49e1a824)
-* [Training weight92.54(ICIC)](https://pan.quark.cn/s/eab81ad811e2)
+* [Training weight92.63(ICIC)](https://pan.quark.cn/s/eab81ad811e2)
 
