@@ -87,7 +87,7 @@ class Echo_2(torch.utils.data.Dataset):
                  external_test_location=None):
 
         if root is None:
-            root = r'/media/ubuntu/e/mengjinpeng/echonet-dynamic'
+            root = r'/media/E/mjp/echonet-dynamic'
 
 
         self.folder = pathlib.Path(root.replace('\\','/'))
@@ -273,33 +273,33 @@ class Echo_2(torch.utils.data.Dataset):
         # print(key)
         larId = target[0]
         smaId = target[1]
-        p=larId-smaId
-        if smaId + p >= f:
-            video1 = video[:, smaId - 2*p + np.arange(p), :, :]
-            video2 = video[:, smaId - p + np.arange(p), :, :]
-            video3 = video[:, larId - p + np.arange(p), :, :]
-            video4 = video[:, larId + np.arange(p), :, :]
+
+        if smaId + 1 >= f:
+            video1 = video[:, smaId - 2 + np.arange(2), :, :]
+            video2 = video[:, smaId - 1 + np.arange(2), :, :]
+            video3 = video[:, larId - 1 + np.arange(2), :, :]
+            video4 = video[:, larId + np.arange(2), :, :]
             target[1] = 1
             target[0] = 3
-        elif larId + p >= f:
-            video1 = video[:, smaId - p + np.arange(p), :, :]
-            video2 = video[:, smaId + np.arange(p), :, :]
-            video3 = video[:, larId - 2*p + np.arange(p), :, :]
-            video4 = video[:, larId - p + np.arange(p), :, :]
+        elif larId + 1 >= f:
+            video1 = video[:, smaId - 1 + np.arange(2), :, :]
+            video2 = video[:, smaId + np.arange(2), :, :]
+            video3 = video[:, larId - 2 + np.arange(2), :, :]
+            video4 = video[:, larId - 1 + np.arange(2), :, :]
             target[1] = 0
             target[0] = 3
 
         else:
-            video1 = video[:, smaId-p + np.arange(p),:,:]
-            video2 = video[:, smaId + np.arange(p),:,:]
-            video3 = video[:, larId-p +np.arange(p),:,:]
-            video4 = video[:, larId + np.arange(p),:,:]
+            video1 = video[:, smaId-1 + np.arange(2),:,:]
+            video2 = video[:, smaId + np.arange(2),:,:]
+            video3 = video[:, larId-1 +np.arange(2),:,:]
+            video4 = video[:, larId + np.arange(2),:,:]
             target[1] = 0
             target[0] = 2
 
         video = tuple((video1, video2,video3,video4))
 
-        video = np.stack(video).reshape((-1,-1,112,112))
+        video = np.stack(video).reshape((-1,6,112,112))
         # print('''gg''',video.shape)
         # print(len(target[0][2]))
         if target != []:
@@ -334,8 +334,8 @@ if __name__ == '__main__':
               }
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     train_dataset = Echo_2(split="train", **kwargs)
-    b=train_dataset.__getitem__(1)
-    print('wan')
+    # b=train_dataset.__getitem__(1)
+    # print('wan')
 # #
 # #
 #     train_dataloader = torch.utils.data.DataLoader(train_dataset, batch_size=1, num_workers=4, shuffle=True, pin_memory=(device.type == "cuda"), drop_last=False)
@@ -379,6 +379,12 @@ if __name__ == '__main__':
 #     test_dataset = Echo(split='test',**kwargs_2)
 #     test_dataloader = torch.utils.data.DataLoader(
 #     test_dataset, batch_size=20, num_workers=4, shuffle=True, pin_memory=(device.type == "cuda"), drop_last=False)
+
+
+
+
+
+
 
 
 
