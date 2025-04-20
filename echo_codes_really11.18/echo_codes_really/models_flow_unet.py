@@ -419,9 +419,9 @@ class Unsupervised(nn.Module):
     #     input[rectangle == 255] = 0
     #     return input
     def forward(self, x):
-        b,c,h,c=x.size
+        #b,c,h,c=x.size
         flow_predictions = self.predictor_f(x)
-        frame2 = x[:, c//2:, :, :]
+        frame2 = x[:, 3:, :, :]
 
         # warped_images = self.stn(flow_predictions, frame2)
         warped_images1 = [self.stn(flow, frame2) for flow in flow_predictions]
@@ -433,8 +433,8 @@ class Unsupervised(nn.Module):
         # seg1 = self.predictor_s(x[:, :3, :, :])["out"]
         # seg2 = self.predictor_s(x[:, 3:, :, :])["out"]
         #两个分割结果
-        seg1 = self.predictor_s(x[:, :c//2, :, :])
-        seg2 = self.predictor_s(x[:, c//2:, :, :])
+        seg1 = self.predictor_s(x[:, :3, :, :])
+        seg2 = self.predictor_s(x[:, 3:, :, :])
 
         # print(seg2.size())
         # warped_segs = self.stn(flow_predictions, seg2)
